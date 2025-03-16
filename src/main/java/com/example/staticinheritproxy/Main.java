@@ -1,4 +1,4 @@
-package com.example.staticinheritproxy.;
+package com.example.staticinheritproxy;
 
 public class Main {
     public static void main(String[] args) {
