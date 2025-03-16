@@ -7,12 +7,13 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
-    public MyBean myBean() {
-        return new MyBean();
+    public MyLifecycleBean myLifecycleBean() {
+        return new MyLifecycleBean();
     }
 
     @Bean
     public MyBeanPostProcessor myBeanPostProcessor() {
         return new MyBeanPostProcessor();
     }
+
 } 

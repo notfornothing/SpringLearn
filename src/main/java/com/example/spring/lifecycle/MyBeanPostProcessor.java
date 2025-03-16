@@ -7,16 +7,16 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof MyBean) {
-            System.out.println("2. BeanPostProcessor.postProcessBeforeInitialization() 方法执行");
+        if (bean instanceof MyLifecycleBean) {
+            System.out.println("5. BeanPostProcessor.postProcessBeforeInitialization() 方法执行");
         }
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof MyBean) {
-            System.out.println("6. BeanPostProcessor.postProcessAfterInitialization() 方法执行");
+        if (bean instanceof MyLifecycleBean) {
+            System.out.println("9. BeanPostProcessor.postProcessAfterInitialization() 方法执行");
         }
         return bean;
     }
