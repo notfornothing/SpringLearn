@@ -13,14 +13,14 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = "com.example.spring.transaction")
+@ComponentScan(basePackages = "cn.leijiba.spring.transaction")
 public class AppConfig {
 
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1");
+        dataSource.setUrl("jdbc:h2:tcp://localhost:9092/~/test");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
         return dataSource;
@@ -35,14 +35,15 @@ public class AppConfig {
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         // 初始化数据库表
+        jdbcTemplate.execute("DROP TABLE IF EXISTS USERS"); // 先删除已存在的表
         jdbcTemplate.execute("CREATE TABLE USERS (id BIGINT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), age INT)");
-        System.out.println("数据库表 'USERS' 已创建");
+//        System.out.println("数据库表 'USERS' 已创建");
         
         // 验证表是否成功创建
         Boolean tableExists = jdbcTemplate.queryForObject(
             "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'USERS'", 
             Boolean.class);
-        System.out.println("Table USERS exists: " + tableExists);
+//        System.out.println("Table USERS exists: " + tableExists);
         
         return jdbcTemplate;
     }

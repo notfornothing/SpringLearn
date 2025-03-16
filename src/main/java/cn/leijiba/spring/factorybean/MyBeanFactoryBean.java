@@ -5,7 +5,7 @@ import org.springframework.beans.factory.FactoryBean;
 public class MyBeanFactoryBean implements FactoryBean<MyBean> {
 
     @Override
-    public MyBean getObject() throws Exception {
+    public MyBean getObject() {
         // 自定义创建 MyBean 的逻辑
         MyBean myBean = new MyBean();
         myBean.setMessage("通过 FactoryBean 创建的 MyBean");
