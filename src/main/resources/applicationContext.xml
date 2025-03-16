@@ -4,5 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myBean" class="com.example.spring.xml.MyBean"/>
+    <bean id="myBean" class="cn.leijiba.spring.xml.MyBean"/>
 </beans> 
