@@ -1,7 +1,11 @@
 package cn.leijiba.spring.transaction;
 
-import org.springframework.stereotype.Service;
-
 public interface AccountService {
-    void transferSalaryByName(String fromAccountName, String toAccountName, int amount);
-} 
+    void testRequired();
+    void testRequiresNew();
+    void testSupports();
+    void testNotSupported();
+    void testMandatory();
+    void testNever();
+    void testNested();
+}

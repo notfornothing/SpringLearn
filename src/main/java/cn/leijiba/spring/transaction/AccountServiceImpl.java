@@ -1,29 +1,65 @@
 package cn.leijiba.spring.transaction;
 
+import cn.leijiba.spring.transaction.propagation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
-    private AccountDao accountDao;
+    private REQUIRED required;
+
+    @Autowired
+    private REQUIRES_NEW requiresNew;
+
+    @Autowired
+    private SUPPORTS supports;
+
+    @Autowired
+    private NOT_SUPPORTED notSupported;
+
+    @Autowired
+    private MANDATORY mandatory;
+
+    @Autowired
+    private NEVER never;
+
+    @Autowired
+    private NESTED nested;
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void transferSalaryByName(String fromAccountName, String toAccountName, int amount) {
-        // 查询转出账户薪资
-        Integer fromSalary = accountDao.getSalaryByName(fromAccountName);
-        if (fromSalary < amount) {
-            throw new RuntimeException("Insufficient salary");
-        }
+    public void testRequired() {
+        required.requiredMethod();
+    }
 
-        // 更新转出账户薪资
-        accountDao.updateSalaryByName(fromAccountName, -amount);
+    @Override
+    public void testRequiresNew() {
+        requiresNew.requiresNewMethod();
+    }
 
-        // 更新转入账户薪资
-        accountDao.updateSalaryByName(toAccountName, amount);
+    @Override
+    public void testSupports() {
+        supports.supportsMethod();
+    }
+
+    @Override
+    public void testNotSupported() {
+        notSupported.notSupportedMethod();
+    }
+
+    @Override
+    public void testMandatory() {
+        mandatory.mandatoryMethod();
+    }
+
+    @Override
+    public void testNever() {
+        never.neverMethod();
+    }
+
+    @Override
+    public void testNested() {
+        nested.nestedMethod();
     }
 } 
