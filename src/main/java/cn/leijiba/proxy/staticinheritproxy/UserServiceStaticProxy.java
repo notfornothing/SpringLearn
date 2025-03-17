@@ -1,4 +1,4 @@
-package cn.leijiba.staticinheritproxy;
+package cn.leijiba.proxy.staticinheritproxy;
 
 public class UserServiceStaticProxy extends UserService {
     @Override

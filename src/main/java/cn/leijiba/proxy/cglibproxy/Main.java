@@ -1,10 +1,10 @@
-package cn.leijiba.staticinheritproxy;
+package cn.leijiba.proxy.cglibproxy;
 
 public class Main {
     public static void main(String[] args) {
-        UserService proxy = new UserServiceStaticProxy();
+        UserService proxy = UserServiceCglibProxy.createProxy();
         
         proxy.addUser("Alice");
         proxy.deleteUser("Bob");
     }
-}  
+} 

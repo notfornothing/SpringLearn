@@ -1,4 +1,4 @@
-package cn.leijiba.cglibproxy;
+package cn.leijiba.proxy.cglibproxy;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

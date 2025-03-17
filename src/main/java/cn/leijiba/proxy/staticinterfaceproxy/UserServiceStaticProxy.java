@@ -1,4 +1,4 @@
-package cn.leijiba.staticinterfaceproxy;
+package cn.leijiba.proxy.staticinterfaceproxy;
 
 public class UserServiceStaticProxy implements UserService {
     private UserService userService;

@@ -1,4 +1,4 @@
-package cn.leijiba.cglibproxy;
+package cn.leijiba.proxy.cglibproxy;
 
 public class UserService {
     public void addUser(String username) {

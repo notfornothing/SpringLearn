@@ -1,4 +1,4 @@
-package cn.leijiba.jdkproxy;
+package cn.leijiba.proxy.staticinterfaceproxy;
 
 public interface UserService {
     void addUser(String username);

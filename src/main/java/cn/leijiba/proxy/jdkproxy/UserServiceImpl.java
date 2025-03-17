@@ -1,4 +1,4 @@
-package cn.leijiba.jdkproxy;
+package cn.leijiba.proxy.jdkproxy;
 
 public class UserServiceImpl implements UserService {
     @Override
