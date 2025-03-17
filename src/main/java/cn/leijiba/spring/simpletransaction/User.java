@@ -1,4 +1,4 @@
-package cn.leijiba.spring.transaction;
+package cn.leijiba.spring.simpletransaction;
 
 public class User {
     private Long id;

@@ -1,4 +1,4 @@
-package cn.leijiba.spring.transaction;
+package cn.leijiba.spring.simpletransaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

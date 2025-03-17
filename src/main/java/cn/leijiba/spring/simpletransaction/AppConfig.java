@@ -1,10 +1,9 @@
-package cn.leijiba.spring.transaction;
+package cn.leijiba.spring.simpletransaction;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +12,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = "cn.leijiba.spring.transaction")
+@ComponentScan(basePackages = "cn.leijiba.spring.simpletransaction")
 public class AppConfig {
 
     @Bean

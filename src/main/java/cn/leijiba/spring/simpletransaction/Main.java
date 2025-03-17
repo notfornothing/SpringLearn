@@ -1,4 +1,4 @@
-package cn.leijiba.spring.transaction;
+package cn.leijiba.spring.simpletransaction;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

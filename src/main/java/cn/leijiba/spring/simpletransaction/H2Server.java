@@ -1,4 +1,4 @@
-package cn.leijiba.spring.transaction;
+package cn.leijiba.spring.simpletransaction;
 
 import org.h2.tools.Server;
 
